@@ -12,7 +12,7 @@ use App\Http\Requests\UpdateTopicRequest;
 class TopicController extends Controller
 {
     public function index(){
-        $topics = Topic::latestFirst()->paginate(1); // paginate for frontend instead of get()
+        $topics = Topic::latestFirst()->paginate(3); // paginate for frontend instead of get()
         return TopicResource::collection($topics);
     }
 
