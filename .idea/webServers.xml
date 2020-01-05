@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e1cb51de-a114-44e9-a8ed-90e052f7481f" name="Local Hosted - Valet" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="$PROJECT_DIR$/.." accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
