@@ -23,3 +23,9 @@ Route::group(['prefix' => 'topics'], function() {
         });
     });
 });
+
+// projects/board
+Route::group(['prefix' => 'projects'], function() {
+    Route::get('/', 'ProjectController@index'); // do auth
+    Route::get('/{id}', 'ProjectController@show');
+});
