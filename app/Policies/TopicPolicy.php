@@ -20,11 +20,13 @@ class TopicPolicy
         //
     }
 
-    public function update(User $user, Topic $topic) {
+    public function update(User $user, Topic $topic)
+    {
         return $user->ownsTopic($topic);
     }
 
-    public function destroy(User $user, Topic $topic) {
+    public function destroy(User $user, Topic $topic)
+    {
         return $user->ownsTopic($topic);
     }
 }

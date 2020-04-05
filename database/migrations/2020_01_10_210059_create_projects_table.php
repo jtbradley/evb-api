@@ -14,8 +14,9 @@ class CreateProjectsTable extends Migration
     public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
-            $table->bigIncrements('id')->nullable();
-            $table->unsignedBigInteger('trello_id');
+            //$table->bigIncrements('id')->nullable();
+            $table->string('trello_id')->primary();
+            $table->string('name')->nullable();
             $table->unsignedBigInteger('user_id')->index();
             $table->timestamps();
 

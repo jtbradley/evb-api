@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
+
 class User extends Authenticatable implements JWTSubject
 
 {
@@ -30,15 +31,23 @@ class User extends Authenticatable implements JWTSubject
         'password', 'remember_token',
     ];
 
-    public function ownsTopic(Topic $topic) {
+    public function ownsTopic(Topic $topic)
+    {
         return $this->id === $topic->user->id;
     }
 
-    public function ownsPost(Post $post) {
+    public function ownsPost(Post $post)
+    {
         return $this->id === $post->user->id;
     }
 
-    public function hasLikedPost(Post $post) {
+    public function ownsProject(Project $project)
+    {
+        return $this->id === $project->user->id;
+    }
+
+    public function hasLikedPost(Post $post)
+    {
         return $post->likes->where('user_id', $this->id)->count() === 1;
     }
 
